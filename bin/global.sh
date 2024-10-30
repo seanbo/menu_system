@@ -60,34 +60,6 @@ function get_menutitle() {
 	IFS=$IFSBACK
 }
 
-function is_jq_installed() {
-
-	echo "Checking to see if jq is installed"
-	JQ_VERSION=$(apt-cache policy jq|grep Installed|awk '{print $2}')
-	if [[ "$JQ_VERSION" == "(none)" ]];
-	then
-		echo "jq is not installed"
-		return 1
-	fi
-	echo "jq version: $JQ_VERSION"
-	return 0
-	
-}
-
-function check_prereqs() {
-
-	echo -n "Checking jq: "
-	if [[ ! is_jq_installed ]];
-	then
-		echo "not installed.  Installing..."
-		install_package "jq"
-		return $?
-	else
-		echo "ok"
-		return 0
-	fi
-}
-
 function execute_selection {
 
 	local SELECTION=$1
@@ -157,8 +129,3 @@ function set_permissions() {
 	echo "There was a problem setting permissions"
 	return 1
 }
-
-####################################
-##        Screen functions        ##
-####################################
-
