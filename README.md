@@ -42,16 +42,16 @@ For each symbolic link you create int he bin directory, you will need a correspo
 
 ### Configuration file format
 
--menutitle : This will define the title on the screen for that menu.  
-  -Each configuration file is required to have a "menutitle" entry.  
-  -It is not required, but then the user would not be aware which menu they were on as there would be no title at the top of the screen
-  -It is not required to be the first entry, but is recommended.
-  -Format: menutitle:Some Title Here:false
--menuitem : There will be one menuitem line for each item in the menu listing
-  -None are required, but that would defeat the purpose, wouldn't it?
-  -Format: menuitem:Some Menu Title:path to script <args>
-    -If the path begins with a leadiing /, the system will use the absolute path to the script.
-    -If the path does not begin with a leading slash, it will look in the menu system's bin directory for the script
+- menutitle : This will define the title on the screen for that menu.  
+  - Each configuration file is required to have a "menutitle" entry.  
+  - It is not required, but then the user would not be aware which menu they were on as there would be no title at the top of the screen
+  - It is not required to be the first entry, but is recommended.
+  - Format: menutitle:Some Title Here:false
+- menuitem : There will be one menuitem line for each item in the menu listing
+  - None are required, but that would defeat the purpose, wouldn't it?
+  - Format: menuitem:Some Menu Title:path to script <args>
+    - If the path begins with a leadiing /, the system will use the absolute path to the script.
+    - If the path does not begin with a leading slash, it will look in the menu system's bin directory for the script
 
 As sample for a possible backup menu (cfg/backup.cfg)
 ```
